@@ -39,18 +39,6 @@ impl Pool {
         }
     }
 
-    // pub fn add_stable_liquidity(
-    //     &mut self,
-    //     sender_id: &AccountId,
-    //     amounts: &Vec<Balance>,
-    //     min_shares: Balance,
-    //     admin_fee: AdminFees,
-    // ) -> Balance {
-    //     match self {
-    //         Pool::SimplePool(_) => unimplemented!()
-    //     }
-    // }
-
     /// Removes liquidity from underlying pool.
     pub fn remove_liquidity(
         &mut self,
@@ -150,13 +138,6 @@ impl Pool {
             Pool::SimplePool(pool) => pool.share_transfer(sender_id, receiver_id, amount)
         }
     }
-
-    /// See if the given account has been registered as a LP
-    // pub fn share_has_registered(&self, account_id: &AccountId) -> bool {
-    //     match self {
-    //         Pool::SimplePool(pool) => pool.share_has_registered(account_id)
-    //     }
-    // }
 
     pub fn share_register(&mut self, account_id: &AccountId) {
         match self {
