@@ -24,7 +24,7 @@ pub struct ContractMetadata {
 #[derive(Serialize, Deserialize, PartialEq)]
 #[serde(crate = "near_sdk::serde")]
 #[cfg_attr(not(target_arch = "wasm32"), derive(Debug))]
-pub struct RefStorageState {
+pub struct StorageState {
     pub deposit: U128,
     pub usage: U128,
 }
@@ -195,11 +195,11 @@ impl Contract {
     }
 
     /// Get user's storage deposit and needed in the account of current version
-    pub fn get_user_storage_state(&self, account_id: ValidAccountId) -> Option<RefStorageState> {
+    pub fn get_user_storage_state(&self, account_id: ValidAccountId) -> Option<StorageState> {
         let acc = self.internal_get_account(account_id.as_ref());
         if let Some(account) = acc {
             Some(
-                RefStorageState {
+                StorageState {
                     deposit: U128(account.near_amount),
                     usage: U128(account.storage_usage()),
                 }

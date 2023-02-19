@@ -20,7 +20,3 @@ neardev
 
 res/*
 !res/babylon_finance.wasm
-
-# res/ref_farming.wasm
-# res/ref_exchange.wasm
-# res/ref_exchange_release.wasm

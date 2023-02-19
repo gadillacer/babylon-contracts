@@ -1307,7 +1307,7 @@ mod tests {
             contract.get_deposit(accounts(3), accounts(1)).0,
             99 * one_near
         );
-        assert_eq!("ref-pool-0".to_string(), contract.mft_metadata(":0".to_string()).name);
+        assert_eq!("bbl-pool-0".to_string(), contract.mft_metadata(":0".to_string()).name);
         // transfer some of token_id 2 from acc 3 to acc 1.
         testing_env!(context.predecessor_account_id(accounts(3)).build());
         contract.mft_transfer_call(accounts(2).to_string(), accounts(1), U128(one_near), Some("mft".to_string()), "".to_string());

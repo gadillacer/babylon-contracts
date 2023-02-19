@@ -257,8 +257,8 @@ impl Contract {
                 FungibleTokenMetadata {
                     // [AUDIT_08]
                     spec: "mft-1.0.0".to_string(),
-                    name: format!("ref-pool-{}", pool_id),
-                    symbol: format!("REF-POOL-{}", pool_id),
+                    name: format!("bbl-pool-{}", pool_id),
+                    symbol: format!("BBL-POOL-{}", pool_id),
                     icon: None,
                     reference: None,
                     reference_hash: None,
